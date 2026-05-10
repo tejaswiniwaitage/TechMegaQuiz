@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tech Mega Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="welcome-page">
+
+<div class="welcome-container">
+    <h1>🚀 Tech Mega Quiz</h1>
+    <h3 id="welcome-user"></h3>
+
+    <p class="subtitle">
+        Test your knowledge in technology, programming, and innovations!
+    </p>
+
+    <div class="instructions">
+        <h3>📌 Instructions</h3>
+        <ul>
+            <li>✔ Each question has 4 options</li>
+            <li>✔ You have limited time</li>
+            <li>✔ Choose the correct answer</li>
+            <li>✔ Score will be shown at the end</li>
+        </ul>
+    </div>
+<div id="category-container">
+    <h2>Select Category</h2>
+    <button onclick="selectCategory('html')">HTML</button>
+    <button onclick="selectCategory('css')">CSS</button>
+    <button onclick="selectCategory('js')">JavaScript</button>
+</div>
+
+ <br>
+     <button onclick="logout()" class="logout-btn">
+        Logout
+    </button>
+</div>
+
+<script>
+
+function selectCategory(category) {
+    localStorage.setItem("quizCategory", category);
+    window.location.href = "quiz.html";
+}
+</script>
+
+<script>
+    const user = localStorage.getItem("quizUser");
+
+    if (!user) {
+        window.location.href = "login.html";
+    }
+
+    document.getElementById("welcome-user").textContent = "Welcome, " + user + " 👋";
+
+    function selectCategory(category) {
+        localStorage.setItem("quizCategory", category);
+        window.location.href = "quiz.html";
+    }
+     function logout() {
+
+            localStorage.removeItem("quizUser");
+
+            alert("Logged out successfully!");
+
+            window.location.href = "login.html";
+        }
+</script>
+
+</body>
+</html>

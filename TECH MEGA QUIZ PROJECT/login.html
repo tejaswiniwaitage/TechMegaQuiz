@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Tech Trivia Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="login-body">
+
+    <div class="login-container">
+
+        <div class="login-card">
+            <h1 class="logo">🚀 Tech Trivia</h1>
+            <p class="tagline">Sharpen your tech skills</p>
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter your name">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+
+            <button onclick="login()">Login</button>
+
+            <p id="error-msg"></p>
+        </div>
+
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("error-msg");
+
+            if (username === "" || password === "") {
+                errorMsg.textContent = "⚠ Please fill all fields";
+                return;
+            }
+
+            // Simple demo validation
+            if (password.length < 4) {
+                errorMsg.textContent = "⚠ Password must be at least 4 characters";
+                return;
+            }
+
+            localStorage.setItem("quizUser", username);
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+
+</html>

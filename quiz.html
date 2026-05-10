@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tech Trivia Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="quiz-container">
+
+        <div class="quiz-header">
+            <h1>🚀 Tech Trivia Quiz</h1>
+
+            <div class="stats">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="question-count">Q: <span id="current-q">1</span></div>
+                <div class="timer">⏱ <span id="time-left">15</span>s</div>
+            </div>
+        </div>
+
+        <div id="question-container" class="question-container">
+            <div class="question-number">Question <span id="q-number">1</span></div>
+            <div id="question" class="question"></div>
+
+            <div id="options" class="options"></div>
+        </div>
+
+        <div id="result-screen" class="result-screen">
+            <h2>🎉 Quiz Completed!</h2>
+            <p>Your Score:</p>
+            <div class="final-score" id="final-score"></div>
+            <div id="grade" class="grade"></div>
+
+            <button id="restart" class="restart-btn">Play Again</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
